@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  />
+   <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="weatherDisplay  d-flex justify-content-between mt-5">
+   <div class="current-temp">
+       <h1 class="dateTime" id="date-time">Time</h1>
+       <h2>Now</h2>
+       <div class=" tempIcon d-flex">
+        <h3 class="temp" id="temp">temp°</h3>
+       <img src="" alt="" class="icon" id="icon">icon</div>
+     <p>Feels like 32 max°</p>
+        </div>
+
+
+    <div class="weather-figures">
+        <div class="condition" id="condition">condition</div>
+        <div class="humidity" id="humidity">humidity%</div>
+<div class="wind" id="wind">Wind</div>
+    </div>
+    </div>
+<form id="form" class="text-center mt-5">
+    <input type="text" placeholder="Enter a city.." autocomplete="on" autofocus="on" 
+    required id="city-input-text" class="p-2 pe-5 ps-5">
+
+    <input type="submit" value="Search" class="p-2 pe-3 ps-3">
+</form>
+
+<div class="forcast">
+<div class="day">day</div>
+<div class="icon">icon</div>
+
+<div class="temp ">
+    <span class="max" id="max">max</span>
+    <span class="stroke">/</span>
+    <span class="min" id="min">min</span>
+    </div>
+</div>
+
+
+
+    </div>
+
+
+
+    <script src="src/app.js"></script>
+</body>
+</html>
