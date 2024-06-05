@@ -14,12 +14,13 @@
 </head>
 <body>
     <div class="container">
+        <h1 class="dateTime text-center" id="date-time">Time</h1>
     <div class="weatherDisplay  d-flex justify-content-between mt-5">
    <div class="current-temp">
-       <h1 class="dateTime" id="date-time">Time</h1>
-       <h2>Now</h2>
+       <h2 class="city" id="city">City</h2>
+       <div>Now</div>
        <div class=" tempIcon d-flex">
-        <h3 class="temp" id="temp">temp°</h3>
+        <div class="temp" id="temp">temp°</div>
        <img src="" alt="" class="icon" id="icon">icon</div>
      <p>Feels like 32 max°</p>
         </div>
@@ -31,9 +32,10 @@
 <div class="wind" id="wind">Wind</div>
     </div>
     </div>
-<form id="form" class="text-center mt-5">
+
+    <form id="form" class="text-center mt-5">
     <input type="text" placeholder="Enter a city.." autocomplete="on" autofocus="on" 
-    required id="city-input-text" class="p-2 pe-5 ps-5">
+    required id="city-input-text" class="">
 
     <input type="submit" value="Search" class="p-2 pe-3 ps-3">
 </form>
