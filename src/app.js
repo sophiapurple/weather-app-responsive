@@ -1,3 +1,4 @@
+
 function displayWeather(response){
     console.log(response.data)
     let city = response.data.city;
@@ -35,31 +36,55 @@ function displayWeather(response){
 function formatTime(time){
     let now = new Date(time*1000);
     let date = now.getDate();
-    let hours = now.getHours();
-    if(hours < 10){
-       hours= `0${hours}`;
-    }
-    
-    let minutes = now.getMinutes();
-    if(minutes < 10){
-      minutes=  `0${minutes};`
-    }
 
 
     let days =[ "Sunday","Monday","Tuesday","Wednesday","Thursday",
         "Friday","Saturday"];
     let CurrentDay= days[now.getDay()];
 
+    let year = now.getFullYear();
+
     let months =["January","Febuary","March","April","May","June",
         "July","August","September","October","November",
         "December"];
         let currentMonth = months[now.getMonth()];
         
-        return`${CurrentDay} ${date} ${currentMonth}  ${hours}:${minutes}`
+        return`${CurrentDay} ${date} ${currentMonth} ${year}`
 }
 
 
 
+function displayForcast(response){
+    let forcasts = response.data;
+    console.log(forcasts);
+    let forcast ="";
+    response.data.daily.forEach(function(day,index){
+    if(index < 6){
+        forcast+=`<div class="day">${formatForcastDay(day.time)}</div>
+        <div class="icon">
+        <img src="${day.condition.icon_url}">
+        </div>
+        
+        <div class="temp">
+            <span class="max" id="max">${Math.round(day.temperature.maximum)}°</span>
+            <span class="stroke">/</span>
+            <span class="min" id="min">${Math.round(day.temperature.minimum)}°</span>
+            </div>`
+    }
+})
+
+let forcastElement = document.querySelector("#forcast");
+forcastElement.innerHTML=forcast;
+}
+
+function formatForcastDay(timestamp){
+    let day = new Date(timestamp*1000);
+    let days =[ "Sunday","Monday","Tuesday","Wednesday","Thursday",
+    "Friday","Saturday"];
+let formatDay= days[day.getDay()];
+console.log(formatDay)
+return formatDay;
+}
 
 
 
