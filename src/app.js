@@ -63,6 +63,15 @@ function formatTime(time){
 
 
 
+function searchForcast(city){
+    let apiKey ="93cf0a589b1befff9b43f05fbt79bo02"
+    let  apiUrl=`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric` 
+    
+   
+    axios.get(apiUrl).then(displayForcast);
+}
+
+
 function searchCity(city){
     let apiKey = "93cf0a589b1befff9b43f05fbt79bo02";
     let  apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
