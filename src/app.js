@@ -3,7 +3,8 @@ function displayWeather(response){
     console.log(response.data)
     let city = response.data.city;
     let temperature = response.data.temperature.current;
-    let icon = `<img src="${response.data.condition.icon_url}" alt="">`
+    let icon = `<img src="${response.data.condition.icon_url}"
+    class="imageIcon"alt="">`
     let feelsLike = response.data.temperature.feels_like;
     let condition= response.data.condition.description;
     let humidity = response.data.temperature.humidity;
@@ -15,10 +16,10 @@ function displayWeather(response){
     let timeElement = document.querySelector("#date-time");
     timeElement.innerHTML= formatTime(response.data.time);
     let cityElement = document.querySelector("#city");
-    cityElement.innerHTML=`Results for ${city.trim()}`;
+    cityElement.innerHTML=` ${city.trim()}`;
     let tempElement = document.querySelector("#temp");
     tempElement.innerHTML=`${Math.round(temperature)}°`;
-    let iconElement = document.querySelector("#icon");
+    let iconElement = document.querySelector("#iconImage");
     iconElement.innerHTML = icon;
     let feelsLikeElement = document.querySelector("#feelsLike");
     feelsLikeElement.innerHTML=`Feels like ${Math.round(feelsLike)}°`;
@@ -60,15 +61,17 @@ function displayForcast(response){
     let forcast ="";
     response.data.daily.forEach(function(day,index){
     if(index < 6){
-        forcast+=`<div class="day">${formatForcastDay(day.time)}</div>
-        <div class="icon">
-        <img src="${day.condition.icon_url}">
-        </div>
+        forcast+=`<div class="forcast">
+        <div class="day ">${formatForcastDay(day.time)}</div>
         
-        <div class="temp">
+        <img src="${day.condition.icon_url}"class="forcastIcon">
+        
+        <div class="temps">
             <span class="max" id="max">${Math.round(day.temperature.maximum)}°</span>
-            <span class="stroke">/</span>
+            
             <span class="min" id="min">${Math.round(day.temperature.minimum)}°</span>
+    
+            </div> 
             </div>`
     }
 })
@@ -79,8 +82,8 @@ forcastElement.innerHTML=forcast;
 
 function formatForcastDay(timestamp){
     let day = new Date(timestamp*1000);
-    let days =[ "Sunday","Monday","Tuesday","Wednesday","Thursday",
-    "Friday","Saturday"];
+    let days =[ "Sun","Mon","Tue","Wed","Thur",
+    "Fri","Sat"];
 let formatDay= days[day.getDay()];
 console.log(formatDay)
 return formatDay;

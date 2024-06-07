@@ -1,0 +1,125 @@
+:root{
+        --heading-font-family: "Poppins", sans-serif;
+        --body-font-family: "Roboto Condensed", sans-serif;
+        --primary-color:  rgb(160, 199, 254) ;
+        --secondary-color:  rgb(115, 88, 44);
+        --alt:   rgb(60, 16, 83);
+      }
+
+
+
+      @media(max-width:900px){
+        h1{
+            font-size: 20px;
+        }
+        .dateTime{
+            font-size:15px;
+        }
+       
+        .weatherContainer .form{
+            
+        }
+
+      }
+      
+
+body{
+    background-color:var(--primary-color) ;
+    
+}
+
+p{
+    font-family:var(--body-font-family--);
+    color: var(--alt--);
+    font-size: 30px;
+}
+
+.city{
+    font-size: 30px;
+    font-weight:bold;
+    color: var(--alt);
+}
+.cityResult{
+    font-size: 17px;
+    font-family: var(--heading-font-family);
+    
+}
+.cityInput{
+    padding-left: 16px;
+}
+
+.forcast{
+    background-color:var(--alt--) ;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--heading-font-family);
+    position: relative;
+    top: 40px;
+    padding: 10px;  
+}
+.forcastIcon{
+position: relative;
+height: 70px;
+bottom: 20px;
+
+}
+
+.form{ 
+    font-size: 22px;
+    text-align: center;
+    margin: 60px;
+    
+  }
+    
+ .header{
+    color: var(--secondary-color);
+    font-family: var(--header-font-family);
+    
+    border-radius: 30px;
+    padding: 15px;
+
+ } 
+
+.imageIcon{
+    height: 250px;
+    position: relative;
+    bottom: 46px;
+    left: 80px;
+}
+
+.searchButton{
+    border-radius: 90px;
+    transition: all 100ms ease-in-out;
+    font-family: var(--body-font-family);
+    color: var(--alt);
+}
+.searchButton:hover{
+    background-color: var(--heading-font-family);
+    color: var(--alt);
+    border: 1px solid var(--alt) ;
+
+}
+.temp{
+    font-size: 100px;
+    font-family: var(--alt)
+}
+
+
+.nav{
+    margin: 30px;
+}
+.weatherDisplay{
+    position: relative;
+    top: 50px;
+    right: 70px;
+}
+.weatherFigures{
+    color: var(--secondary-color);
+    font-family: var(--heading-font-family);
+    font-size: 16px;
+    margin-left:80px ;
+    position: relative;
+    bottom: 30px;
+}
+
